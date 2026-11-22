@@ -1,0 +1,9 @@
+#M13P1
+students = {"Smith": 88, "Jones": 92, "Worf": 85, "Davis": 79, "Wilson": 95, "Taylor": 87, "Smurf": 90, "Dracula": 84, "White": 91, "Krueger": 89}
+print("Student\t\tGrade")
+total = 0
+for name, grade in students.items():
+    print(name, "\t\t", format(grade, ".2f"))
+    total = total + grade
+average = total / len(students)
+print("Class Average\t", format(average, ".2f"))

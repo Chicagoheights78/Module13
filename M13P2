@@ -1,0 +1,25 @@
+#M13P2
+def create_averages(students):
+    averages = {}
+    for name, grades in students.items():
+        average = (grades[0] + grades[1] + grades[2]) / 3
+        averages[name] = average
+    return averages
+students = {"Smith": [88, 92, 85], "Jones": [92, 89, 94], "Worf": [85, 17, 83], "Davis": [79, 81, 78], "Wilson": [95, 93, 97], "Taylor": [87, 88, 86], "Smurf": [90, 91, 89], "Dracula": [99, 99, 99], "White": [91, 90, 52], "Krueger": [89, 87, 90]}
+averages = create_averages(students)
+print("Student\t\tAverage")
+for name, average in averages.items():
+    print(name, "\t\t", format(average, ".2f"))
+grade1_total = 0
+grade2_total = 0
+grade3_total = 0
+for grades in students.values():
+    grade1_total = grade1_total + grades[0]
+    grade2_total = grade2_total + grades[1]
+    grade3_total = grade3_total + grades[2]
+grade1_average = grade1_total / len(students)
+grade2_average = grade2_total / len(students)
+grade3_average = grade3_total / len(students)
+print("Grade 1 Average\t", format(grade1_average, ".2f"))
+print("Grade 2 Average\t", format(grade2_average, ".2f"))
+print("Grade 3 Average\t", format(grade3_average, ".2f"))

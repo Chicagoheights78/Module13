@@ -1,0 +1,15 @@
+#M13P3
+def display_players(players):
+    print("Player\t\tAverage")
+    for name, average in players.items():
+        print(name, "\t\t", format(average, ".3f"))
+players = {}
+file = open("batting.txt", "r")
+while True:
+    player_name = file.readline().strip()
+    if player_name == "":
+        break
+    average = float(file.readline().strip())
+    players[player_name] = average
+file.close()
+display_players(players)
